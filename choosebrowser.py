@@ -7,8 +7,8 @@ from gi.repository import Gtk
 class ButtonWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Button Demo")
-        self.set_border_width(10)
+        Gtk.Window.__init__(self, title="Choose Browser")
+        self.set_border_width(20)
 
         hbox = Gtk.Box(spacing=6)
         self.add(hbox)
