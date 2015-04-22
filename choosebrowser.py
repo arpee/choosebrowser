@@ -8,9 +8,9 @@ class ButtonWindow(Gtk.Window):
 
     def __init__(self):
         Gtk.Window.__init__(self, title="Choose Browser")
-        self.set_border_width(20)
+        self.set_border_width(120)
 
-        hbox = Gtk.Box(spacing=6)
+        hbox = Gtk.Box(spacing=20)
         self.add(hbox)
 
         button = Gtk.Button("Firefox")
