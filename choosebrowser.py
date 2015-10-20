@@ -18,14 +18,16 @@ class ButtonWindow(Gtk.Window):
         #button.set_border_width(40)
         hbox.pack_start(button, True, True, 0)
 
+        button = Gtk.Button("Web")
+        button.connect("clicked", self.on_web_clicked)
+        hbox.pack_start(button, True, True, 0)
+
         button = Gtk.Button("Chrome")
-        button.connect("clicked", self.on_cr_clicked)
-        #button.set_border_width(40)
+        button.connect("clicked", self.on_gc_clicked)
         hbox.pack_start(button, True, True, 0)
 
         button = Gtk.Button("Chromium")
         button.connect("clicked", self.on_cr_clicked)
-        #button.set_border_width(40)
         hbox.pack_start(button, True, True, 0)
 
         button = Gtk.Button("_Close", use_underline=True)
@@ -37,8 +39,11 @@ class ButtonWindow(Gtk.Window):
         webbrowser.get('firefox').open_new_tab(sys.argv[1])
         Gtk.main_quit()
 
-    def on_cr_clicked(self, button):
-        #webbrowser.get('chromium').open_new_tab(sys.argv[1])
+    def on_web_clicked(self, button):
+        webbrowser.get('epiphany').open_new_tab(sys.argv[1])
+        Gtk.main_quit()
+
+    def on_gc_clicked(self, button):
         process_one = subprocess.Popen(['google-chrome-stable', sys.argv[1]])
         Gtk.main_quit()
 
