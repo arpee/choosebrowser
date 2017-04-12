@@ -30,6 +30,10 @@ class ButtonWindow(Gtk.Window):
         button.connect("clicked", self.on_cr_clicked)
         hbox.pack_start(button, True, True, 0)
 
+        button = Gtk.Button("Vivaldi")
+        button.connect("clicked", self.on_cr_clicked)
+        hbox.pack_start(button, True, True, 0)
+
         button = Gtk.Button("_Close", use_underline=True)
         button.connect("clicked", self.on_close_clicked)
         #button.set_border_width(40)
@@ -49,6 +53,10 @@ class ButtonWindow(Gtk.Window):
 
     def on_cr_clicked(self, button):
         webbrowser.get('chromium').open_new_tab(sys.argv[1])
+        Gtk.main_quit()
+
+    def on_cr_clicked(self, button):
+        process_one = subprocess.Popen(['vivaldi-stable', sys.argv[1]])
         Gtk.main_quit()
 
     def on_close_clicked(self, button):
