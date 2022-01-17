@@ -1,7 +1,12 @@
 # choosebrowser
-Choose a browser opening system urls.
+A script to intercept calls to open an url and prompt the user to choose the destination browser or copy the link.
 
-This is a copy and paste one file script to replace a linux system's default browser and give the user a choice between opening the link in Firefox or Chrome.
+## istallation 
+(not implemented in any way)
+Copy the choosebrowser.py file into your path some place. Set as the default browser for your system.
 
-* No config and not extensible
-* Only useful if you are overly picky about which browser you open links in.
+## todo
+
+* parse gnome/kda application lists for browsers and add dynamically
+* add support for xdg:open applications
+* add installation scripts
