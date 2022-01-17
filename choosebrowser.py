@@ -51,6 +51,10 @@ class ButtonWindow(Gtk.Window):
         button.connect("clicked", self.on_brave_clicked)
         hbox.pack_start(button, True, True, 0)
 
+        button = Gtk.Button("Zoom")
+        button.connect("clicked", self.on_zoom_clicked)
+        hbox.pack_start(button, True, True, 0)
+
         button = Gtk.Button("Copy")
         button.connect("clicked", self.on_cp_clicked)
         hbox.pack_start(button, True, True, 0)
@@ -86,6 +90,10 @@ class ButtonWindow(Gtk.Window):
 
     def on_brave_clicked(self, button):
         process_one = subprocess.Popen(['brave', sys.argv[1]])
+        Gtk.main_quit()
+
+    def on_zoom_clicked(self, button):
+        process_one = subprocess.Popen(['zoom', '--url='+sys.argv[1]])
         Gtk.main_quit()
 
     def on_cp_clicked(self, button):
